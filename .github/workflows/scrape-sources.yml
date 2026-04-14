@@ -31,8 +31,3 @@ jobs:
           path: |
             data/processed
             data/raw
-        with:
-          name: mf-scrape-${{ github.run_id }}
-          path: |
-           data/processed
-           data/raw
