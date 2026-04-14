@@ -1,0 +1,155 @@
+{
+  "funds": {
+    "icici-prudential-large-cap-fund-direct-growth": {
+      "live_metrics": {
+        "nav": "₹117.54 (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "aum_cr": "69,947.55 (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "returns": {
+          "1y": "-2.23%",
+          "3y": "1.31%",
+          "5y": "8%"
+        },
+        "expense_ratio": "0.87% (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)"
+      },
+      "scheme_info": {
+        "objective": "The scheme seeks to generate long term capital appreciation and income distribution to investors from a portfolio that is predominantly invested in equity and equity related securities of large cap companies. (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "benchmark": "NIFTY 100 Total Return Index (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "fund_manager": "Sankaran Naren (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "launch_date": "12 Oct 1993 (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "Exit load of 1%, if redeemed within 1 month. (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "min_lumpsum": "₹100 (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "min_sip": "₹100 (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)"
+      },
+      "portfolio": {
+        "sector_alloc": {
+          "Equity": "9.12%"
+        }
+      },
+      "tax_notes": "taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year. (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)"
+    },
+    "icici-prudential-flexicap-fund-direct-growth": {
+      "live_metrics": {
+        "nav": "₹19.65 (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "aum_cr": "18,458.16 (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "returns": {
+          "1y": "-6.88%",
+          "3y": "1.69%",
+          "5y": "8%"
+        },
+        "expense_ratio": "0.80% (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)"
+      },
+      "scheme_info": {
+        "objective": "The scheme seeks to generate long-term capital appreciation by investing predominately in equity & equity related instruments across market capitalization. (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "benchmark": "BSE 500 Total Return Index (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "fund_manager": "Rajat Chandak (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "launch_date": "12 Oct 1993 (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "Exit load of 1%, if redeemed within 1 month. (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "min_lumpsum": "₹5,000 (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "min_sip": "₹100 (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)"
+      },
+      "portfolio": {
+        "sector_alloc": {
+          "Equity": "9.50%"
+        }
+      },
+      "tax_notes": "taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year. (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)"
+    },
+    "icici-prudential-midcap-fund-direct-growth": {
+      "live_metrics": {
+        "nav": "₹354.62 (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "aum_cr": "6,568.77 (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "returns": {
+          "1y": "0.005%",
+          "3y": "1.94%",
+          "5y": "8%"
+        },
+        "expense_ratio": "1.05% (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)"
+      },
+      "scheme_info": {
+        "objective": "This scheme aims to generate long term capital appreciation by investing in diversified midcap stocks portfolio. It will predominantly invest in companies with market capitalization falling between the lowest and the highest market capitalisation among the constituents (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "benchmark": "NIFTY Midcap 150 Total Return Index (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "fund_manager": "Lalit Kumar (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "launch_date": "12 Oct 1993 (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "Exit load of 1% if redeemed within 1 year. (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "min_lumpsum": "N/A",
+        "min_sip": "₹100 (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)"
+      },
+      "portfolio": {
+        "sector_alloc": {
+          "Equity": "4.72%"
+        }
+      },
+      "tax_notes": "taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year. (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)"
+    },
+    "icici-prudential-smallcap-fund-direct-growth": {
+      "live_metrics": {
+        "nav": "₹91.43 (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "aum_cr": "7,538.12 (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "returns": {
+          "1y": "-3.44%",
+          "3y": "1.65%",
+          "5y": "8%"
+        },
+        "expense_ratio": "0.81% (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)"
+      },
+      "scheme_info": {
+        "objective": "The scheme seeks to generate capital appreciation by predominantly investing in equity and equity related securities of small cap stocks. (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "benchmark": "NIFTY Smallcap 250 Total Return Index (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "fund_manager": "Rajat Chandak (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "launch_date": "12 Oct 1993 (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "N/A",
+        "min_lumpsum": "₹5,000 (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "min_sip": "₹100 (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)"
+      },
+      "portfolio": {
+        "sector_alloc": {
+          "Equity": "4.08%"
+        }
+      },
+      "tax_notes": "taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year. (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)"
+    },
+    "icici-prudential-elss-tax-saver-direct-plan-growth": {
+      "live_metrics": {
+        "nav": "₹1,006.64 (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "aum_cr": "12,809.74 (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "returns": {
+          "1y": "-7.11%",
+          "3y": "1.11%",
+          "5y": "8%"
+        },
+        "expense_ratio": "1.11% (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)"
+      },
+      "scheme_info": {
+        "objective": "The scheme seeks long-term capital appreciation by investing approximately 90 per cent of the investments in equity instruments, while the balance 10 per cent would be a parked in debt and money market instrument and cash ( Including-money at call). (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "benchmark": "NIFTY 500 Total Return Index (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "fund_manager": "Mittul Kalawadia (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "launch_date": "12 Oct 1993 (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "N/A",
+        "min_lumpsum": "₹500 (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "min_sip": "₹500 (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)"
+      },
+      "portfolio": {
+        "sector_alloc": {
+          "Equity": "7.59%"
+        }
+      },
+      "tax_notes": "ELSS has a 3-year lock-in; eligible for deduction under Section 80C up to applicable limits."
+    }
+  },
+  "faqs": []
+}

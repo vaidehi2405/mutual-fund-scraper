@@ -12,6 +12,7 @@ This implementation includes:
 - `LIP2urls.csv`: configured source URLs (section-based input file)
 - `app/scrape_sources.py`: scraper + text extraction + chunk creation
 - `app/extract_key_facts.py`: extracts key facts from chunks
+- `app/build_faq_dataset.py`: builds chatbot-ready JSON for 5 ICICI Prudential direct-growth funds
 - `data/raw/<run_id>/`: raw HTML and cleaned text snapshots
 - `data/processed/sources_snapshot.jsonl`: source-level scrape status and metadata
 - `data/processed/chunks.jsonl`: chunked text for retrieval/indexing
@@ -30,6 +31,8 @@ This implementation includes:
    - Optional: `python app/scrape_sources.py --source-file LIP2urls.csv --only-active`
 4. Extract key fields:
    - `python app/extract_key_facts.py`
+5. Build chatbot JSON output:
+   - `python app/build_faq_dataset.py`
 
 ## Scheduler
 
