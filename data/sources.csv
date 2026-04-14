@@ -1,0 +1,23 @@
+source_id,fund,doc_type,url,amc,scheme,active
+icici_largecap_sid,ICICI Prudential Large Cap Fund,SID,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential Large Cap Fund,true
+icici_largecap_factsheet,ICICI Prudential Large Cap Fund,Factsheet,https://www.icicipruamc.com/blob/knowledgecenter/factsheet,ICICI Prudential AMC,ICICI Prudential Large Cap Fund,true
+icici_largecap_kim,ICICI Prudential Large Cap Fund,KIM,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential Large Cap Fund,true
+icici_largecap_product,ICICI Prudential Large Cap Fund,Product Page,https://groww.in/mutual-funds/icici-prudential-large-cap-fund,ICICI Prudential AMC,ICICI Prudential Large Cap Fund,true
+icici_flexicap_sid,ICICI Prudential Flexicap Fund,SID,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential Flexicap Fund,true
+icici_flexicap_factsheet,ICICI Prudential Flexicap Fund,Factsheet,https://www.icicipruamc.com/blob/knowledgecenter/factsheet,ICICI Prudential AMC,ICICI Prudential Flexicap Fund,true
+icici_flexicap_kim,ICICI Prudential Flexicap Fund,KIM,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential Flexicap Fund,true
+icici_flexicap_product,ICICI Prudential Flexicap Fund,Product Page,https://groww.in/mutual-funds/icici-prudential-flexicap-fund,ICICI Prudential AMC,ICICI Prudential Flexicap Fund,true
+icici_midcap_sid,ICICI Prudential Midcap Fund,SID,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential Midcap Fund,true
+icici_midcap_factsheet,ICICI Prudential Midcap Fund,Factsheet,https://www.icicipruamc.com/blob/knowledgecenter/factsheet,ICICI Prudential AMC,ICICI Prudential Midcap Fund,true
+icici_midcap_kim,ICICI Prudential Midcap Fund,KIM,http://sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential Midcap Fund,true
+icici_midcap_product,ICICI Prudential Midcap Fund,Product Page,https://groww.in/mutual-funds/icici-prudential-midcap-fund,ICICI Prudential AMC,ICICI Prudential Midcap Fund,true
+icici_smallcap_sid,ICICI Prudential Smallcap Fund,SID,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential Smallcap Fund,true
+icici_smallcap_factsheet,ICICI Prudential Smallcap Fund,Factsheet,https://www.icicipruamc.com/blob/knowledgecenter/factsheet,ICICI Prudential AMC,ICICI Prudential Smallcap Fund,true
+icici_smallcap_kim,ICICI Prudential Smallcap Fund,KIM,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential Smallcap Fund,true
+icici_smallcap_product,ICICI Prudential Smallcap Fund,Product Page,https://groww.in/mutual-funds/icici-prudential-smallcap-fund,ICICI Prudential AMC,ICICI Prudential Smallcap Fund,true
+icici_elss_sid,ICICI Prudential ELSS Tax Saver Fund,SID,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential ELSS Tax Saver Fund,true
+icici_elss_factsheet,ICICI Prudential ELSS Tax Saver Fund,Factsheet,https://www.icicipruamc.com/blob/knowledgecenter/factsheet,ICICI Prudential AMC,ICICI Prudential ELSS Tax Saver Fund,true
+icici_elss_kim,ICICI Prudential ELSS Tax Saver Fund,KIM,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,ICICI Prudential AMC,ICICI Prudential ELSS Tax Saver Fund,true
+icici_elss_product,ICICI Prudential ELSS Tax Saver Fund,Product Page,https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-fund,ICICI Prudential AMC,ICICI Prudential ELSS Tax Saver Fund,true
+sebi_fund_details_global,NA,Regulatory Reference,https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doGetFundDetails=yes,SEBI,NA,true
+icici_amc_faq,NA,AMC FAQ,https://www.icicipruamc.com/help-center/faqs,ICICI Prudential AMC,NA,true

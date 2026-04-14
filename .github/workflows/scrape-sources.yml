@@ -1,0 +1,40 @@
+name: Scrape MF Sources
+
+on:
+  schedule:
+    # 9:15 AM IST = 03:45 AM UTC
+    - cron: "45 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: LIP-2
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: python app/scrape_sources.py --only-active
+
+      - name: Extract key facts
+        run: python app/extract_key_facts.py
+
+      - name: Upload scrape artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mf-scrape-${{ github.run_id }}
+          path: |
+            LIP-2/data/processed
+            LIP-2/data/raw

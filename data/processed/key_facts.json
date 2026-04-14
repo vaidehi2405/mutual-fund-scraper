@@ -1,0 +1,412 @@
+{
+  "generated_at": "2026-04-14T04:36:22+00:00",
+  "source_file": "data\\processed\\chunks.jsonl",
+  "tracked_fields": [
+    "expense_ratio",
+    "nav",
+    "exit_load",
+    "minimum_sip",
+    "lock_in_elss",
+    "riskometer",
+    "benchmark",
+    "statement_download"
+  ],
+  "facts_by_scheme": {
+    "Small Cap": {
+      "expense_ratio": {
+        "value": "Expense ratio 0.81%",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_small_cap_28",
+        "scheme": "Small Cap",
+        "matched_text": "Expense ratio 0.81%",
+        "score": 8
+      },
+      "nav": {
+        "value": "Latest NAV as of 13 Apr 2026 is \u20b991.43.",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_small_cap_28",
+        "scheme": "Small Cap",
+        "matched_text": "Latest NAV as of 13 Apr 2026 is \u20b991.43.",
+        "score": 11
+      },
+      "exit_load": {
+        "value": "Exit load of 1% if redeemed upto 1 year",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_small_cap_28",
+        "scheme": "Small Cap",
+        "matched_text": "Exit load of 1% if redeemed upto 1 year",
+        "score": 6
+      },
+      "minimum_sip": {
+        "value": "Minimum SIP Investment is set to \u20b9100",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_small_cap_28",
+        "scheme": "Small Cap",
+        "matched_text": "Minimum SIP Investment is set to \u20b9100",
+        "score": 8
+      },
+      "lock_in_elss": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "riskometer": {
+        "value": "Very High risk",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_small_cap_28",
+        "scheme": "Small Cap",
+        "matched_text": "Very High risk",
+        "score": 2
+      },
+      "benchmark": {
+        "value": "benchmark",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_small_cap_28",
+        "scheme": "Small Cap",
+        "matched_text": "benchmark",
+        "score": 2
+      },
+      "statement_download": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      }
+    },
+    "Midcap": {
+      "expense_ratio": {
+        "value": "Expense ratio 1.05%",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_mid_cap_27",
+        "scheme": "Midcap",
+        "matched_text": "Expense ratio 1.05%",
+        "score": 8
+      },
+      "nav": {
+        "value": "Latest NAV as of 13 Apr 2026 is \u20b9354.62.",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_mid_cap_27",
+        "scheme": "Midcap",
+        "matched_text": "Latest NAV as of 13 Apr 2026 is \u20b9354.62.",
+        "score": 11
+      },
+      "exit_load": {
+        "value": "Exit load of 1% if redeemed within 1 year",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_mid_cap_27",
+        "scheme": "Midcap",
+        "matched_text": "Exit load of 1% if redeemed within 1 year",
+        "score": 6
+      },
+      "minimum_sip": {
+        "value": "Minimum SIP Investment is set to \u20b9100",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_mid_cap_27",
+        "scheme": "Midcap",
+        "matched_text": "Minimum SIP Investment is set to \u20b9100",
+        "score": 8
+      },
+      "lock_in_elss": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "riskometer": {
+        "value": "Very High risk",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_mid_cap_27",
+        "scheme": "Midcap",
+        "matched_text": "Very High risk",
+        "score": 2
+      },
+      "benchmark": {
+        "value": "benchmark",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_mid_cap_27",
+        "scheme": "Midcap",
+        "matched_text": "benchmark",
+        "score": 2
+      },
+      "statement_download": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      }
+    },
+    "Flexicap": {
+      "expense_ratio": {
+        "value": "Expense ratio 0.80%",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_flexi_cap_29",
+        "scheme": "Flexicap",
+        "matched_text": "Expense ratio 0.80%",
+        "score": 8
+      },
+      "nav": {
+        "value": "Latest NAV as of 13 Apr 2026 is \u20b919.65.",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_flexi_cap_29",
+        "scheme": "Flexicap",
+        "matched_text": "Latest NAV as of 13 Apr 2026 is \u20b919.65.",
+        "score": 11
+      },
+      "exit_load": {
+        "value": "Exit load of 1%, if redeemed within 1 month",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_flexi_cap_29",
+        "scheme": "Flexicap",
+        "matched_text": "Exit load of 1%, if redeemed within 1 month",
+        "score": 6
+      },
+      "minimum_sip": {
+        "value": "Minimum SIP Investment is set to \u20b9100",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_flexi_cap_29",
+        "scheme": "Flexicap",
+        "matched_text": "Minimum SIP Investment is set to \u20b9100",
+        "score": 8
+      },
+      "lock_in_elss": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "riskometer": {
+        "value": "Very High risk",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_flexi_cap_29",
+        "scheme": "Flexicap",
+        "matched_text": "Very High risk",
+        "score": 2
+      },
+      "benchmark": {
+        "value": "benchmark",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_flexi_cap_29",
+        "scheme": "Flexicap",
+        "matched_text": "benchmark",
+        "score": 2
+      },
+      "statement_download": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      }
+    },
+    "Large Cap": {
+      "expense_ratio": {
+        "value": "Expense ratio 0.87%",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_large_cap_26",
+        "scheme": "Large Cap",
+        "matched_text": "Expense ratio 0.87%",
+        "score": 8
+      },
+      "nav": {
+        "value": "Latest NAV as of 13 Apr 2026 is \u20b9117.54.",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_large_cap_26",
+        "scheme": "Large Cap",
+        "matched_text": "Latest NAV as of 13 Apr 2026 is \u20b9117.54.",
+        "score": 11
+      },
+      "exit_load": {
+        "value": "Exit load of 1%, if redeemed within 1 month",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_large_cap_26",
+        "scheme": "Large Cap",
+        "matched_text": "Exit load of 1%, if redeemed within 1 month",
+        "score": 6
+      },
+      "minimum_sip": {
+        "value": "Minimum SIP Investment is set to \u20b9100",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_large_cap_26",
+        "scheme": "Large Cap",
+        "matched_text": "Minimum SIP Investment is set to \u20b9100",
+        "score": 8
+      },
+      "lock_in_elss": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "riskometer": {
+        "value": "Very High risk",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_large_cap_26",
+        "scheme": "Large Cap",
+        "matched_text": "Very High risk",
+        "score": 2
+      },
+      "benchmark": {
+        "value": "benchmark",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_large_cap_26",
+        "scheme": "Large Cap",
+        "matched_text": "benchmark",
+        "score": 2
+      },
+      "statement_download": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      }
+    },
+    "ELSS": {
+      "expense_ratio": {
+        "value": "Expense ratio 1.11%",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_elss_30",
+        "scheme": "ELSS",
+        "matched_text": "Expense ratio 1.11%",
+        "score": 8
+      },
+      "nav": {
+        "value": "Latest NAV as of 13 Apr 2026 is \u20b91,006.64.",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_elss_30",
+        "scheme": "ELSS",
+        "matched_text": "Latest NAV as of 13 Apr 2026 is \u20b91,006.64.",
+        "score": 11
+      },
+      "exit_load": {
+        "value": "Exit load, stamp duty and tax",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_elss_30",
+        "scheme": "ELSS",
+        "matched_text": "Exit load, stamp duty and tax",
+        "score": 3
+      },
+      "minimum_sip": {
+        "value": "Minimum SIP Investment is set to \u20b9500",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_elss_30",
+        "scheme": "ELSS",
+        "matched_text": "Minimum SIP Investment is set to \u20b9500",
+        "score": 8
+      },
+      "lock_in_elss": {
+        "value": "Lock-in",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_elss_30",
+        "scheme": "ELSS",
+        "matched_text": "Lock-in",
+        "score": 2
+      },
+      "riskometer": {
+        "value": "Very High risk",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_elss_30",
+        "scheme": "ELSS",
+        "matched_text": "Very High risk",
+        "score": 2
+      },
+      "benchmark": {
+        "value": "benchmark",
+        "source_url": "https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth",
+        "source_id": "groww_scheme_specific_data_and_faqs_elss_30",
+        "scheme": "ELSS",
+        "matched_text": "benchmark",
+        "score": 2
+      },
+      "statement_download": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      }
+    },
+    "NA": {
+      "expense_ratio": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "nav": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "exit_load": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "minimum_sip": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "lock_in_elss": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "riskometer": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "benchmark": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      },
+      "statement_download": {
+        "value": "",
+        "source_url": "",
+        "source_id": "",
+        "scheme": "",
+        "matched_text": "",
+        "score": 0
+      }
+    }
+  }
+}
