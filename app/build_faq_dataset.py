@@ -162,24 +162,6 @@ def extract_returns(chunks: List[Dict[str, str]]) -> Dict[str, str]:
     return returns
 
 
-def extract_top_holdings(chunks: List[Dict[str, str]]) -> List[str]:
-    found: List[str] = []
-    pattern = re.compile(r"([A-Za-z][A-Za-z0-9& .,'()-]{2,60})\s+(\d+(?:\.\d+)?%)")
-    for row in chunks:
-        text = row["text"]
-        if "holding" not in text.lower():
-            continue
-        for name, weight in pattern.findall(text):
-            line = f"{normalize_text(name)} - {weight}"
-            if line.lower().startswith(("top holdings", "holding")):
-                continue
-            if line not in found:
-                found.append(line)
-            if len(found) >= 10:
-                return found
-    return found
-
-
 def extract_sector_alloc(chunks: List[Dict[str, str]]) -> Dict[str, str]:
     alloc: Dict[str, str] = {}
     pattern = re.compile(r"([A-Za-z][A-Za-z &/-]{2,40})\s+(\d+(?:\.\d+)?%)")
@@ -336,7 +318,6 @@ def build_fund_payload(rows: List[Dict[str, str]], fund_key: str) -> Dict[str, o
     min_sip, sip_url = best_match(rows, [r"minimum\s*sip[^\n]{0,120}", r"sip[^\n]{0,80}minimum[^\n]{0,80}"])
 
     returns = extract_returns(rows)
-    top_holdings = extract_top_holdings(rows)
     sector_alloc = extract_sector_alloc(rows)
 
     tax_note = "N/A"
@@ -365,10 +346,7 @@ def build_fund_payload(rows: List[Dict[str, str]], fund_key: str) -> Dict[str, o
             "min_lumpsum": format_with_source(min_lump, lump_url),
             "min_sip": format_with_source(min_sip, sip_url),
         },
-        "portfolio": {
-            "top_holdings": top_holdings if top_holdings else ["N/A"],
-            "sector_alloc": sector_alloc,
-        },
+       
         "tax_notes": tax_note,
     }
 
