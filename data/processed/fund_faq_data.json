@@ -1,0 +1,202 @@
+{
+  "funds": {
+    "icici-prudential-large-cap-fund-direct-growth": {
+      "live_metrics": {
+        "nav": "Latest NAV as of 13 Apr 2026 is ₹117 (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "aum_cr": "AUM) of ₹10,24,916 Cr (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "returns": {
+          "1y": "N/A",
+          "3y": "1.31\n%",
+          "5y": "8%"
+        },
+        "expense_ratio": "N/A"
+      },
+      "scheme_info": {
+        "objective": "Investment Objective (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "benchmark": "benchmark (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "fund_manager": "fund managers (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "launch_date": "Launch Date (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "Exit load of 1%, if redeemed within 1 month. (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "min_lumpsum": "Minimum Lumpsum Investment is ₹100. Exit load of 1%, if redeemed within 1 month. (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)",
+        "min_sip": "Minimum SIP Investment is set to ₹100. Minimum Lumpsum Investment is ₹100. Exit load of 1%, if redeemed within 1 month. (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)"
+      },
+      "portfolio": {
+        "top_holdings": [
+          "Expense ratio - 0.87%",
+          "Equity - 9.12%",
+          "Equity - 8.65%",
+          "Exit load of - 1%"
+        ],
+        "sector_alloc": {
+          "Expense ratio": "0.87%",
+          "Equity": "9.12%"
+        }
+      },
+      "tax_notes": "taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year. (Source: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth)"
+    },
+    "icici-prudential-flexicap-fund-direct-growth": {
+      "live_metrics": {
+        "nav": "Latest NAV as of 13 Apr 2026 is ₹19 (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "aum_cr": "AUM) of ₹10,24,916 Cr (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "returns": {
+          "1y": "N/A",
+          "3y": "1.69\n%",
+          "5y": "8%"
+        },
+        "expense_ratio": "N/A"
+      },
+      "scheme_info": {
+        "objective": "Investment Objective (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "benchmark": "benchmark (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "fund_manager": "Fund Manager of ICICI Prudential Flexicap Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of ₹10,24,916 Cr and the Latest (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "launch_date": "Launch Date (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "Exit load of 1%, if redeemed within 1 month. (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "min_lumpsum": "Minimum Lumpsum Investment is ₹5,000. Exit load of 1%, if redeemed within 1 month. (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)",
+        "min_sip": "Minimum SIP Investment is set to ₹100. Minimum Lumpsum Investment is ₹5,000. Exit load of 1%, if redeemed within 1 month. (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)"
+      },
+      "portfolio": {
+        "top_holdings": [
+          "Expense ratio - 0.80%",
+          "Equity - 9.50%",
+          "Equity - 7.02%",
+          "Equity - 6.40%",
+          "uity - 1.51%",
+          "Equity - 1.43%",
+          "Equity - 1.38%",
+          "Equity - 1.06%",
+          "Equity - 0.97%",
+          "Equity - 0.85%"
+        ],
+        "sector_alloc": {
+          "Expense ratio": "0.80%",
+          "Equity": "9.50%"
+        }
+      },
+      "tax_notes": "taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year. (Source: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth)"
+    },
+    "icici-prudential-midcap-fund-direct-growth": {
+      "live_metrics": {
+        "nav": "Latest NAV as of 13 Apr 2026 is ₹354 (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "aum_cr": "AUM) of ₹10,24,916 Cr (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "returns": {
+          "1y": "0.005%",
+          "3y": "1.94\n%",
+          "5y": "8%"
+        },
+        "expense_ratio": "N/A"
+      },
+      "scheme_info": {
+        "objective": "Investment Objective (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "benchmark": "benchmark (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "fund_manager": "Fund Manager of ICICI Prudential Midcap Direct Plan Growth fund. The fund currently has an Asset Under Management(AUM) of ₹10,24,916 Cr and the Latest N (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "launch_date": "Launch Date (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "Exit load of 1% if redeemed within 18 months (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "min_lumpsum": "Minimum investments (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)",
+        "min_sip": "Minimum SIP Investment is set to ₹100. Exit load of 1% if redeemed within 1 year. (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)"
+      },
+      "portfolio": {
+        "top_holdings": [
+          "Expense ratio - 1.05%",
+          "Equity - 4.72%",
+          "Equity - 4.51%"
+        ],
+        "sector_alloc": {
+          "Expense ratio": "1.05%",
+          "Equity": "4.72%"
+        }
+      },
+      "tax_notes": "taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year. (Source: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth)"
+    },
+    "icici-prudential-smallcap-fund-direct-growth": {
+      "live_metrics": {
+        "nav": "Latest NAV as of 13 Apr 2026 is ₹91 (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "aum_cr": "AUM) of ₹10,24,916 Cr (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "returns": {
+          "1y": "0.005%",
+          "3y": "1.65\n%",
+          "5y": "8%"
+        },
+        "expense_ratio": "N/A"
+      },
+      "scheme_info": {
+        "objective": "Investment Objective (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "benchmark": "benchmark (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "fund_manager": "fund managers (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "launch_date": "Launch Date (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "Exit load of 1% if redeemed upto 1 year (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "min_lumpsum": "Minimum Lumpsum Investment is ₹5,000. Exit load of 1% if redeemed upto 1 year (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)",
+        "min_sip": "Minimum SIP Investment is set to ₹100. Minimum Lumpsum Investment is ₹5,000. Exit load of 1% if redeemed upto 1 year (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)"
+      },
+      "portfolio": {
+        "top_holdings": [
+          "Expense ratio - 0.81%",
+          "Equity - 4.08%",
+          "Equity - 2.96%",
+          "ity - 2.45%",
+          "Equity - 2.39%",
+          "Equity - 2.37%",
+          "Equity - 2.32%",
+          "Equity - 2.29%",
+          "Equity - 1.94%",
+          "Equity - 1.80%"
+        ],
+        "sector_alloc": {
+          "Expense ratio": "0.81%",
+          "Equity": "4.08%"
+        }
+      },
+      "tax_notes": "taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year. (Source: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth)"
+    },
+    "icici-prudential-elss-tax-saver-direct-plan-growth": {
+      "live_metrics": {
+        "nav": "Latest NAV as of 13 Apr 2026 is ₹1,006 (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "aum_cr": "AUM) of ₹10,24,916 Cr (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "returns": {
+          "1y": "N/A",
+          "3y": "1.11\n%",
+          "5y": "8%"
+        },
+        "expense_ratio": "N/A"
+      },
+      "scheme_info": {
+        "objective": "Investment Objective (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "riskometer": "Very High Risk (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "benchmark": "benchmark (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "fund_manager": "Fund Manager of ICICI Prudential ELSS Tax Saver Direct Plan Growth fund. The fund currently has an Asset Under Management(AUM) of ₹10,24,916 Cr and the (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "launch_date": "Launch Date (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)"
+      },
+      "fees_loads": {
+        "exit_load": "Exit load, stamp duty and tax (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "min_lumpsum": "Minimum Lumpsum Investment is ₹500. (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)",
+        "min_sip": "Minimum SIP Investment is set to ₹500. Minimum Lumpsum Investment is ₹500. (Source: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth)"
+      },
+      "portfolio": {
+        "top_holdings": [
+          "Expense ratio - 1.11%",
+          "Equity - 7.59%",
+          "Equity - 6.61%",
+          "Returns are taxed at - 20%",
+          "e one year. After 1 year, you are required to pay LTCG tax of - 12.5%"
+        ],
+        "sector_alloc": {
+          "Expense ratio": "1.11%",
+          "Equity": "7.59%"
+        }
+      },
+      "tax_notes": "ELSS has a 3-year lock-in; eligible for deduction under Section 80C up to applicable limits."
+    }
+  },
+  "faqs": []
+}
