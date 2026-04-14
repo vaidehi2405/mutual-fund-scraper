@@ -1,0 +1,4 @@
+# Treat generated FAQ artifact as derived output and prefer current branch copy
+# during merges; regenerate it after merge via:
+#   python app/build_faq_dataset.py
+data/processed/fund_faq_data.json merge=ours

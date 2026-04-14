@@ -12,6 +12,7 @@ This implementation includes:
 - `LIP2urls.csv`: configured source URLs (section-based input file)
 - `app/scrape_sources.py`: scraper + text extraction + chunk creation
 - `app/extract_key_facts.py`: extracts key facts from chunks
+- `app/build_faq_dataset.py`: builds chatbot-ready JSON for 5 ICICI Prudential direct-growth funds
 - `data/raw/<run_id>/`: raw HTML and cleaned text snapshots
 - `data/processed/sources_snapshot.jsonl`: source-level scrape status and metadata
 - `data/processed/chunks.jsonl`: chunked text for retrieval/indexing
@@ -30,6 +31,8 @@ This implementation includes:
    - Optional: `python app/scrape_sources.py --source-file LIP2urls.csv --only-active`
 4. Extract key fields:
    - `python app/extract_key_facts.py`
+5. Build chatbot JSON output:
+   - `python app/build_faq_dataset.py`
 
 ## Scheduler
 
@@ -46,3 +49,27 @@ GitHub Actions workflow:
 - Duplicate URLs across funds are fetched once per run and reused.
 - Failed source fetches are recorded with error details in `sources_snapshot.jsonl`.
 - Key extracted fields: `expense_ratio` (numeric % from source text), `nav`, `exit_load`, `minimum_sip`, `lock_in_elss`, `riskometer`, `benchmark`, `statement_download`.
+
+## Resolving merge conflicts for generated FAQ files
+
+If GitHub shows conflicts in:
+- `app/build_faq_dataset.py`
+- `data/processed/fund_faq_data.json`
+
+Use this CLI flow:
+
+1. Update local base and switch to your branch:
+   - `git fetch origin`
+   - `git checkout <your-branch>`
+   - `git merge origin/main`
+2. Resolve conflicts in `app/build_faq_dataset.py` by keeping the latest extractor functions and removing all conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
+3. Regenerate JSON from the resolved script:
+   - `python app/build_faq_dataset.py`
+4. Stage and complete the merge:
+   - `git add app/build_faq_dataset.py data/processed/fund_faq_data.json`
+   - `git commit`
+5. Push:
+   - `git push origin <your-branch>`
+
+Tip: prefer regenerating `data/processed/fund_faq_data.json` from the resolved Python script instead of manually merging JSON content.
+This repository also sets a merge rule in `.gitattributes` to prefer the current branch version of `data/processed/fund_faq_data.json`, then regenerate after merge.
