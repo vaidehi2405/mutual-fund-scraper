@@ -1,14 +1,14 @@
 {
-  "run_id": "20260413T191302Z",
-  "started_at": "2026-04-13T19:13:02+00:00",
-  "ended_at": "2026-04-13T19:13:29+00:00",
+  "run_id": "20260415T082805Z",
+  "started_at": "2026-04-15T08:28:05+00:00",
+  "ended_at": "2026-04-15T08:28:37+00:00",
   "source_rows_total": 22,
   "unique_urls_total": 22,
-  "successful_sources": 21,
-  "failed_sources": 1,
-  "chunks_generated": 1290,
+  "successful_sources": 20,
+  "failed_sources": 2,
+  "chunks_generated": 1265,
   "outputs": {
-    "raw_run_dir": "data\\raw\\20260413T191302Z",
+    "raw_run_dir": "data\\raw\\20260415T082805Z",
     "sources_snapshot_jsonl": "data\\processed\\sources_snapshot.jsonl",
     "chunks_jsonl": "data\\processed\\chunks.jsonl"
   }
