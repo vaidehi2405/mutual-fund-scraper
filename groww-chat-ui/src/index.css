@@ -1,14 +1,22 @@
 /* groww-chat-ui/src/index.css */
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   background-color: #f0f2f1;
 }
 
+body {
+  display: block;
+}
+
 #root {
   width: 100%;
+  min-height: 100vh;
 }
