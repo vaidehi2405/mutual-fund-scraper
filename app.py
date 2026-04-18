@@ -62,6 +62,9 @@ def inject_custom_css():
         cursor: pointer;
         text-decoration: none;
         transition: transform 0.2s ease;
+        font-size: 30px;
+        color: white;
+        line-height: 1;
     }}
     .custom-fab:hover {{ transform: scale(1.1); color: white; }}
 
@@ -81,7 +84,9 @@ def inject_custom_css():
 
     /* THE MASTER CHAT MODAL FIX */
     /* Target the specific container that follows our anchor marker */
-    div[data-testid="stVerticalBlock"]:has(> div > .chat-marker) {{
+    div[data-testid="stVerticalBlock"]:has(.chat-marker),
+    div[data-testid="stVerticalBlockBorderWrapper"]:has(.chat-marker),
+    div[data-testid="stVerticalBlock"]:has(> div > div > .chat-marker) {{
         position: fixed !important;
         bottom: 105px !important;
         right: 30px !important;
@@ -105,7 +110,8 @@ def inject_custom_css():
     }}
 
     /* Ensure all children of the modal container are visible and stacked */
-    div[data-testid="stVerticalBlock"]:has(> div > .chat-marker) > div {{
+    div[data-testid="stVerticalBlock"]:has(.chat-marker) > div,
+    div[data-testid="stVerticalBlockBorderWrapper"]:has(.chat-marker) > div {{
         width: 100% !important;
     }}
 
@@ -188,12 +194,12 @@ def main():
 
     # --- FAB ---
     fab_link = "/?open_chat=true" if not st.session_state.chat_open else "/?open_chat=false"
-    st.markdown(f"""
-    <a href="{fab_link}" class="custom-fab" target="_self">
-        {"<div class='pulse-effect'></div>" if not st.session_state.chat_open else ""}
-        <span style="font-size: 30px; z-index: 2;">{"🤖" if not st.session_state.chat_open else "✖️"}</span>
-    </a>
-    """, unsafe_allow_html=True)
+    fab_icon = "🤖" if not st.session_state.chat_open else "✖"
+    pulse_html = "<div class='pulse-effect'></div>" if not st.session_state.chat_open else ""
+    st.markdown(
+        f'<a href="{fab_link}" class="custom-fab" target="_self">{pulse_html}{fab_icon}</a>',
+        unsafe_allow_html=True,
+    )
 
     # --- CHAT MODAL ---
     if st.session_state.chat_open:
