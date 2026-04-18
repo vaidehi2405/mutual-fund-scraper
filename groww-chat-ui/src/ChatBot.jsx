@@ -1,32 +1,122 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './ChatBot.css';
 
 const EXAMPLES = [
-  'What is the expense ratio of ICICI Bluechip Fund?',
-  'What is the lock-in period for ELSS?',
-  'Who is the fund manager for Small Cap fund?',
+  'Expense ratio of ICICI Bluechip',
+  'ELSS lock-in',
+  'Who manages ICICI Small Cap Fund?',
+  'AUM of ICICI Flexi Cap Fund',
 ];
 
 const formatTime = (date = new Date()) =>
   date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
+const ChatHeader = ({ onClose, onNewChat }) => (
+  <header className="flex items-start justify-between border-b border-slate-200 bg-slate-50 px-5 py-4">
+    <div>
+      <h2 className="text-base font-semibold tracking-tight text-slate-900">MF Assistant</h2>
+      <p className="mt-0.5 text-xs text-slate-500">Facts only</p>
+    </div>
+    <div className="flex items-center gap-2">
+      <button
+        type="button"
+        onClick={onNewChat}
+        className="rounded-md px-2.5 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-800"
+      >
+        New chat
+      </button>
+      <button
+        type="button"
+        onClick={onClose}
+        aria-label="Close assistant"
+        className="rounded-md p-1.5 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
+      >
+        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M6 18L18 6" />
+        </svg>
+      </button>
+    </div>
+  </header>
+);
+
+const MessageBubble = ({ message }) => {
+  const isUser = message.role === 'user';
+
+  return (
+    <article className={`flex ${isUser ? 'justify-end' : 'justify-start'} animate-fade-in`}>
+      <div
+        className={`max-w-[75%] rounded-xl px-3.5 py-2.5 text-sm leading-relaxed ${
+          isUser
+            ? 'bg-emerald-100 text-emerald-950'
+            : 'border border-slate-200 bg-white text-slate-800 shadow-sm'
+        }`}
+      >
+        <p className="whitespace-pre-wrap">{message.text}</p>
+        <time className="mt-1.5 block text-[10px] text-slate-400">{message.timestamp}</time>
+      </div>
+    </article>
+  );
+};
+
+const SuggestionChips = ({ items, onSelect }) => (
+  <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    {items.map((item) => (
+      <button
+        key={item}
+        type="button"
+        onClick={() => onSelect(item)}
+        className="shrink-0 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700"
+      >
+        {item}
+      </button>
+    ))}
+  </div>
+);
+
 const TypingIndicator = () => (
-  <div className="message-row bot">
-    <div className="message-bubble bot-bubble typing" aria-label="Assistant is typing">
-      <span />
-      <span />
-      <span />
+  <div className="flex justify-start animate-fade-in">
+    <div className="flex items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-sm">
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-slate-400 [animation-delay:0ms]" />
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-slate-400 [animation-delay:150ms]" />
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-slate-400 [animation-delay:300ms]" />
     </div>
   </div>
 );
 
-const ChatBot = ({ onClose }) => {
+const ChatInput = ({ value, onChange, onSend, disabled }) => (
+  <div className="sticky bottom-0 border-t border-slate-200 bg-white/95 px-4 pb-3 pt-2 backdrop-blur">
+    <div className="flex items-center gap-2 rounded-full border border-slate-300 bg-white px-3 py-2 shadow-sm focus-within:border-emerald-400 focus-within:ring-2 focus-within:ring-emerald-100">
+      <input
+        type="text"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        onKeyDown={(event) => event.key === 'Enter' && onSend()}
+        placeholder="Ask about mutual funds..."
+        className="w-full border-none bg-transparent text-sm text-slate-800 outline-none placeholder:text-slate-400"
+        aria-label="Ask mutual fund question"
+      />
+      <button
+        type="button"
+        onClick={onSend}
+        disabled={disabled}
+        className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-slate-300"
+        aria-label="Send message"
+      >
+        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M22 2L11 13" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M22 2L15 22l-4-9-9-4 20-7z" />
+        </svg>
+      </button>
+    </div>
+    <p className="mt-2 text-center text-[10px] text-slate-400">
+      Facts only. Not investment advice.
+    </p>
+  </div>
+);
+
+const ChatDrawer = ({ onClose }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [piiError, setPiiError] = useState(false);
-
   const chatBodyRef = useRef(null);
 
   useEffect(() => {
@@ -40,27 +130,16 @@ const ChatBot = ({ onClose }) => {
     return lower.includes('@') || lower.includes('aadhaar') || /\bpan\b/.test(lower) || /\d{10,}/.test(text);
   };
 
-  const handleSend = async (text) => {
-    const query = (text ?? input).trim();
-    if (!query || isLoading) return;
+  const handleNewChat = () => {
+    setMessages([]);
+    setInput('');
+  };
 
-    if (hasPii(query)) {
-      setPiiError(true);
-      setInput('');
-      setTimeout(() => setPiiError(false), 3000);
-      return;
-    }
+  const handleSend = async (draft) => {
+    const query = (draft ?? input).trim();
+    if (!query || isLoading || hasPii(query)) return;
 
-    setErrorMessage('');
-
-    const userMsg = {
-      id: `${Date.now()}-user`,
-      role: 'user',
-      text: query,
-      timestamp: formatTime(),
-    };
-
-    setMessages((prev) => [...prev, userMsg]);
+    setMessages((prev) => [...prev, { id: `${Date.now()}-u`, role: 'user', text: query, timestamp: formatTime() }]);
     setInput('');
     setIsLoading(true);
 
@@ -77,24 +156,22 @@ const ChatBot = ({ onClose }) => {
       }
 
       const data = await response.json();
-      const botMsg = {
-        id: data.id || `${Date.now()}-bot`,
-        role: 'bot',
-        text: data.text,
-        source_url: data.source_url,
-        scraped_at: data.scraped_at,
-        timestamp: formatTime(),
-      };
-
-      setMessages((prev) => [...prev, botMsg]);
-    } catch {
-      setErrorMessage('Unable to fetch response right now. Please try again.');
       setMessages((prev) => [
         ...prev,
         {
-          id: `${Date.now()}-error`,
-          role: 'error',
-          text: 'I am having trouble connecting to data sources. Please retry in a moment.',
+          id: data.id || `${Date.now()}-b`,
+          role: 'bot',
+          text: data.text,
+          timestamp: formatTime(),
+        },
+      ]);
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `${Date.now()}-e`,
+          role: 'bot',
+          text: 'I could not fetch the latest fact right now. Please retry in a moment.',
           timestamp: formatTime(),
         },
       ]);
@@ -104,88 +181,32 @@ const ChatBot = ({ onClose }) => {
   };
 
   return (
-    <aside className="chatbot-drawer" role="dialog" aria-label="MF FAQ Assistant" aria-modal="true">
-      <header className="chat-header">
-        <div className="header-content">
-          <div className="assistant-icon" aria-hidden="true">
-            i
-          </div>
-          <div>
-            <h1>MF FAQ Assistant</h1>
-            <p>
-              Groww · Facts only · No investment advice <span className="brand-pill">GROWW</span>
-            </p>
-          </div>
-        </div>
-        <button className="icon-button" onClick={onClose} aria-label="Close assistant">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-      </header>
+    <aside
+      role="dialog"
+      aria-modal="true"
+      aria-label="MF Assistant"
+      className="fixed right-0 top-0 z-50 flex h-screen w-full animate-slide-in flex-col overflow-hidden rounded-none bg-white shadow-2xl sm:w-[380px] sm:rounded-l-3xl"
+    >
+      <ChatHeader onClose={onClose} onNewChat={handleNewChat} />
 
-      <div className="advisory-strip">Facts only. No investment advice. Always consult a SEBI-registered advisor.</div>
-
-      <main className="chat-body" ref={chatBodyRef}>
+      <main ref={chatBodyRef} className="flex-1 space-y-4 overflow-y-auto bg-slate-50 px-4 py-4">
         {messages.length === 0 && (
-          <section className="empty-state">
-            <h2>TRY ASKING</h2>
-            <div className="quick-actions">
-              {EXAMPLES.map((example) => (
-                <button key={example} className="suggestion-chip" onClick={() => handleSend(example)}>
-                  <span className="dot" aria-hidden="true" />
-                  <span>{example}</span>
-                </button>
-              ))}
-            </div>
+          <section className="space-y-3 animate-fade-in">
+            <p className="text-xs font-medium uppercase tracking-wide text-slate-500">Try asking</p>
+            <SuggestionChips items={EXAMPLES} onSelect={handleSend} />
           </section>
         )}
 
-        {messages.map((msg) => (
-          <article key={msg.id} className={`message-row ${msg.role === 'user' ? 'user' : 'bot'}`}>
-            <div className={`message-bubble ${msg.role === 'user' ? 'user-bubble' : msg.role === 'error' ? 'error-bubble' : 'bot-bubble'}`}>
-              <p>{msg.text}</p>
-              <time dateTime={new Date().toISOString()}>{msg.timestamp}</time>
-            </div>
-
-            {msg.role === 'bot' && msg.source_url && (
-              <div className="message-actions">
-                <a className="source-button" href={msg.source_url} target="_blank" rel="noreferrer noopener">
-                  View source
-                </a>
-                {msg.scraped_at && <span className="meta-text">Updated: {msg.scraped_at.split('T')[0]}</span>}
-              </div>
-            )}
-          </article>
+        {messages.map((message) => (
+          <MessageBubble key={message.id} message={message} />
         ))}
 
         {isLoading && <TypingIndicator />}
       </main>
 
-      <footer className="chat-input-bar">
-        {errorMessage && <div className="status-banner error">{errorMessage}</div>}
-        {piiError && <div className="status-banner warning">Please do not enter personal information.</div>}
-        <div className="input-shell">
-          <input
-            type="text"
-            value={input}
-            className="chat-input"
-            placeholder="Ask a factual question about MF schemes"
-            onChange={(event) => setInput(event.target.value)}
-            onKeyDown={(event) => event.key === 'Enter' && handleSend()}
-            aria-label="Ask your mutual fund question"
-          />
-          <button className="send-button" onClick={() => handleSend()} disabled={!input.trim() || isLoading} aria-label="Send message">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-          </button>
-        </div>
-      </footer>
+      <ChatInput value={input} onChange={setInput} onSend={() => handleSend()} disabled={!input.trim() || isLoading} />
     </aside>
   );
 };
 
-export default ChatBot;
+export default ChatDrawer;
