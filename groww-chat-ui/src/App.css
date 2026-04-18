@@ -99,7 +99,10 @@ body, html, #root {
 .chatbot-modal {
   position: relative;
   height: 100vh;
-  width: min(100vw, 400px);
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   z-index: 2;
   animation: slideInRight 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -264,6 +267,7 @@ body, html, #root {
   .chatbot-modal {
     width: 100vw;
     height: 100vh;
+    display: block;
   }
   .fab {
     bottom: 60px; /* Adjusted for ribbon */

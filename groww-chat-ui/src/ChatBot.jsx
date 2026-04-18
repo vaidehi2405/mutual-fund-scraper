@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './ChatBot.css';
 
 const EXAMPLES = [
@@ -39,14 +39,6 @@ const ChatBot = ({ onClose }) => {
     const lower = text.toLowerCase();
     return lower.includes('@') || lower.includes('aadhaar') || /\bpan\b/.test(lower) || /\d{10,}/.test(text);
   };
-
-  const welcomeState = useMemo(
-    () => ({
-      title: 'Hi, I can help you with mutual fund info like NAV, expense ratio, returns, etc.',
-      subtitle: 'Try one of these or ask your own question.',
-    }),
-    []
-  );
 
   const handleSend = async (text) => {
     const query = (text ?? input).trim();
@@ -114,9 +106,16 @@ const ChatBot = ({ onClose }) => {
   return (
     <aside className="chatbot-drawer" role="dialog" aria-label="MF FAQ Assistant" aria-modal="true">
       <header className="chat-header">
-        <div>
-          <h1>MF FAQ Assistant</h1>
-          <p>Powered by AI</p>
+        <div className="header-content">
+          <div className="assistant-icon" aria-hidden="true">
+            i
+          </div>
+          <div>
+            <h1>MF FAQ Assistant</h1>
+            <p>
+              Groww · Facts only · No investment advice <span className="brand-pill">GROWW</span>
+            </p>
+          </div>
         </div>
         <button className="icon-button" onClick={onClose} aria-label="Close assistant">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -126,15 +125,17 @@ const ChatBot = ({ onClose }) => {
         </button>
       </header>
 
+      <div className="advisory-strip">Facts only. No investment advice. Always consult a SEBI-registered advisor.</div>
+
       <main className="chat-body" ref={chatBodyRef}>
         {messages.length === 0 && (
           <section className="empty-state">
-            <h2>{welcomeState.title}</h2>
-            <p>{welcomeState.subtitle}</p>
+            <h2>TRY ASKING</h2>
             <div className="quick-actions">
               {EXAMPLES.map((example) => (
                 <button key={example} className="suggestion-chip" onClick={() => handleSend(example)}>
-                  {example}
+                  <span className="dot" aria-hidden="true" />
+                  <span>{example}</span>
                 </button>
               ))}
             </div>
@@ -170,7 +171,7 @@ const ChatBot = ({ onClose }) => {
             type="text"
             value={input}
             className="chat-input"
-            placeholder="Ask about mutual funds…"
+            placeholder="Ask a factual question about MF schemes"
             onChange={(event) => setInput(event.target.value)}
             onKeyDown={(event) => event.key === 'Enter' && handleSend()}
             aria-label="Ask your mutual fund question"
