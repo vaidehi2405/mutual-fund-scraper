@@ -79,24 +79,39 @@ body, html, #root {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
-.chatbot-modal {
+.chatbot-drawer-shell {
   position: fixed;
-  bottom: 80px;
-  right: 30px;
-  width: 380px;
-  height: min(600px, 75vh);
+  inset: 0;
   z-index: 1001;
-  animation: slideUp 0.3s cubic-bezier(0, 0, 0.2, 1);
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.2s ease;
 }
 
-@keyframes slideUp {
+.chatbot-backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: rgba(15, 23, 42, 0.15);
+  cursor: pointer;
+}
+
+.chatbot-modal {
+  position: relative;
+  height: 100vh;
+  width: min(100vw, 400px);
+  z-index: 2;
+  animation: slideInRight 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+    transform: translateX(24px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(0);
   }
 }
 
@@ -249,9 +264,6 @@ body, html, #root {
   .chatbot-modal {
     width: 100vw;
     height: 100vh;
-    bottom: 0;
-    right: 0;
-    border-radius: 0;
   }
   .fab {
     bottom: 60px; /* Adjusted for ribbon */

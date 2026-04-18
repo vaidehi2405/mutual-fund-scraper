@@ -61,8 +61,11 @@ function App() {
 
       {/* ChatBot Modal */}
       {isChatOpen && (
-        <div className="chatbot-modal">
-          <ChatBot onClose={() => setIsChatOpen(false)} />
+        <div className="chatbot-drawer-shell" role="presentation">
+          <button className="chatbot-backdrop" aria-label="Close assistant" onClick={() => setIsChatOpen(false)} />
+          <div className="chatbot-modal">
+            <ChatBot onClose={() => setIsChatOpen(false)} />
+          </div>
         </div>
       )}
 
