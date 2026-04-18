@@ -7,3 +7,4 @@ beautifulsoup4
 python-dotenv
 openai
 numpy
+protobuf==4.25.3
