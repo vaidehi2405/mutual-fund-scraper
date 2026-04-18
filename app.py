@@ -14,6 +14,13 @@ st.set_page_config(
     layout="wide"
 )
 
+# Handle Query Params for FAB click
+if "open_chat" in st.query_params:
+    st.session_state.chat_open = (st.query_params["open_chat"] == "true")
+    st.session_state.discovery_seen = True
+    # Clear param to avoid sticky state
+    st.query_params.clear()
+
 # --- LOAD ASSETS ---
 def get_base64_image(file_path):
     with open(file_path, "rb") as f:
@@ -40,55 +47,60 @@ def inject_custom_css():
     footer {{visibility: hidden;}}
     #MainMenu {{visibility: hidden;}}
 
-    /* Floating Action Button (FAB) */
-    .fab-container {{
+    /* Floating Action Button (FAB) - ROBUST HTML VERSION */
+    .custom-fab {{
         position: fixed;
-        bottom: 50px;
+        bottom: 40px;
         right: 30px;
-        z-index: 2001;
-        cursor: pointer;
-    }}
-
-    .robot-icon {{
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         background: #00B386;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 100000;
+        cursor: pointer;
+        text-decoration: none;
         transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }}
 
-    .robot-icon:hover {{
+    .custom-fab:hover {{
         transform: scale(1.1);
+        color: white;
     }}
 
-    /* Pulse Animation */
-    @keyframes pulse {{
-        0% {{ box-shadow: 0 0 0 0 rgba(0, 179, 134, 0.7); }}
-        70% {{ box-shadow: 0 0 0 15px rgba(0, 179, 134, 0); }}
-        100% {{ box-shadow: 0 0 0 0 rgba(0, 179, 134, 0); }}
-    }}
-    .pulse {{
+    .pulse-effect {{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #00B386;
+        opacity: 0.6;
         animation: pulse 2s infinite;
+        z-index: -1;
+    }}
+
+    @keyframes pulse {{
+        0% {{ transform: scale(1); opacity: 0.6; }}
+        100% {{ transform: scale(1.6); opacity: 0; }}
     }}
 
     /* Discovery Tooltip */
     .discovery-tooltip {{
         position: fixed;
-        bottom: 120px;
+        bottom: 115px;
         right: 30px;
         background: white;
         color: #44475b;
-        padding: 12px 16px;
+        padding: 14px 18px;
         border-radius: 12px;
         font-size: 14px;
         font-weight: 500;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        z-index: 2001;
-        max-width: 240px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 100001;
+        max-width: 260px;
         animation: slideIn 0.3s ease-out;
     }}
 
@@ -107,16 +119,15 @@ def inject_custom_css():
         to {{ opacity: 1; transform: translateY(0); }}
     }}
 
-    /* Overlay */
+    /* Overlay - NO BLUR TO PREVENT TRAP */
     .discovery-overlay {{
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(2px);
-        z-index: 2000;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 99999;
     }}
 
     /* Bottom Ribbon Marquee */
@@ -131,7 +142,7 @@ def inject_custom_css():
         display: flex;
         align-items: center;
         overflow: hidden;
-        z-index: 1999;
+        z-index: 99998;
     }}
 
     .ribbon-label {{
@@ -172,43 +183,8 @@ def inject_custom_css():
         0% {{ transform: translateX(0); }}
         100% {{ transform: translateX(-50%); }}
     }}
-
-    /* Chat Window Styles */
-    .stChatFloatingWindow {{
-        position: fixed;
-        bottom: 120px;
-        right: 30px;
-        width: 380px;
-        height: 550px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 16px;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-        z-index: 2002;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        border: 1px solid rgba(0,0,0,0.05);
-    }}
     </style>
     """, unsafe_allow_html=True)
-
-# --- HELPER FUNCTIONS ---
-def has_pii(text: str) -> bool:
-    text_lower = text.lower()
-    if "@" in text_lower or "aadhaar" in text_lower: return True
-    if re.search(r'\bpan\b', text_lower): return True
-    if re.search(r'\d{10,}', text): return True
-    return False
-
-def get_most_recent_scraped_at():
-    try:
-        collection = get_collection()
-        results = collection.get(limit=50) 
-        dates = [m.get("ingested_at", "") for m in results['metadatas'] if m.get("ingested_at")]
-        if dates: return max(dates).split('T')[0]
-    except: pass
-    return "2026-04-18"
 
 # --- MAIN APP LOGIC ---
 def main():
@@ -228,23 +204,18 @@ def main():
         st.markdown('<div class="discovery-overlay"></div>', unsafe_allow_html=True)
         st.markdown('<div class="discovery-tooltip">Need help choosing funds? Chat with our AI assistant!</div>', unsafe_allow_html=True)
 
-    # --- FLOATING ACTION BUTTON ---
-    # Triggering state via a hidden streamlit button hack
-    col1, col2 = st.columns([10, 1])
-    with col2:
-        # Streamlit doesn't have a direct "fixed" button, so we use a standard one and move it with CSS if needed,
-        # but for reliability, we'll use a clickable HTML div that toggles session state via JS or a simple refresh.
-        # However, to keep it "Streamlit-pure", we use a real button styled as a FAB.
-        st.markdown('<div class="fab-container">', unsafe_allow_html=True)
-        if st.button("🤖", key="fab_btn", help="Open Assistant"):
-            st.session_state.chat_open = not st.session_state.chat_open
-            st.session_state.discovery_seen = True
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+    # --- FLOATING ASSISTANT (FAB) ---
+    # Using a robust HTML anchor that reloads with a query param
+    st.markdown(f"""
+    <a href="/?open_chat=true" class="custom-fab" target="_self">
+        <div class="pulse-effect"></div>
+        <span style="font-size: 32px;">🤖</span>
+    </a>
+    """, unsafe_allow_html=True)
 
     # --- CHAT OVERLAY ---
     if st.session_state.chat_open:
-        with st.sidebar: # Using Sidebar as a high-fidelity "Slide-out" chat
+        with st.sidebar:
             st.image("https://groww.in/favicon.ico", width=30)
             st.title("MF FAQ Assistant")
             st.caption("Groww • Facts only • No advice")
@@ -258,30 +229,24 @@ def main():
                         st.markdown(f'<small>[Source]({msg["source"]})</small>', unsafe_allow_html=True)
 
             # Chat Input
-            if prompt := st.chat_input("Ask a factual question…"):
-                if has_pii(prompt):
-                    st.error("Please do not enter personal information.")
-                else:
+            def on_chat_submit():
+                prompt = st.session_state.chat_input_val
+                if prompt:
                     st.session_state.messages.append({"role": "user", "content": prompt})
-                    with st.chat_message("user"):
-                        st.write(prompt)
+                    response = run_pipeline(prompt)
+                    source_match = re.search(r"Source:\s*(https?://[^\s|]+)", response)
+                    source_url = source_match.group(1).strip() if source_match else None
+                    st.session_state.messages.append({
+                        "role": "assistant", 
+                        "content": response,
+                        "source": source_url
+                    })
 
-                    with st.chat_message("assistant"):
-                        with st.spinner("Analyzing facts..."):
-                            response = run_pipeline(prompt)
-                            # Extract source if exists
-                            source_match = re.search(r"Source:\s*(https?://[^\s|]+)", response)
-                            source_url = source_match.group(1).strip() if source_match else None
-                            
-                            st.write(response)
-                            if source_url:
-                                st.markdown(f'<small>[Click here to view source]({source_url})</small>', unsafe_allow_html=True)
-                            
-                            st.session_state.messages.append({
-                                "role": "assistant", 
-                                "content": response,
-                                "source": source_url
-                            })
+            st.chat_input("Ask a factual question…", key="chat_input_val", on_submit=on_chat_submit)
+            
+            if st.button("Close Chat", type="secondary", use_container_width=True):
+                st.session_state.chat_open = False
+                st.rerun()
 
     # --- BOTTOM MARQUEE ---
     schemes = [
@@ -292,7 +257,6 @@ def main():
         "ICICI Prudential Midcap Fund"
     ]
     marquee_content = "".join([f'<div class="marquee-item">{s}</div><div class="divider"></div>' for s in schemes])
-    # Duplicate for seamless loop
     marquee_html = f'<div class="marquee-container">{marquee_content}{marquee_content}</div>'
 
     st.markdown(f"""
@@ -301,10 +265,6 @@ def main():
         {marquee_html}
     </div>
     """, unsafe_allow_html=True)
-
-    # --- HIDDEN INFO ---
-    if not st.session_state.chat_open:
-        st.info("Click the robot icon in the bottom right to start chatting.")
 
 if __name__ == "__main__":
     main()
