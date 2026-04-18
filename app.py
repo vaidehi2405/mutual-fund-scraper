@@ -184,10 +184,15 @@ def main():
 
     # --- FAB ---
     fab_link = "/?open_chat=true" if not st.session_state.chat_open else "/?open_chat=false"
+    fab_icon = "🤖" if not st.session_state.chat_open else "✖️"
+    pulse_html = "<div class='pulse-effect'></div>" if not st.session_state.chat_open else ""
+    
     st.markdown(f"""
     <a href="{fab_link}" class="custom-fab" target="_self">
-        {"<div class='pulse-effect'></div>" if not st.session_state.chat_open else ""}
-        <span style="font-size: 30px; z-index: 1000001;">{"🤖" if not st.session_state.chat_open else "✖️"}</span>
+        {pulse_html}
+        <div style="font-size: 30px; z-index: 1000002; display: flex; align-items: center; justify-content: center;">
+            {fab_icon}
+        </div>
     </a>
     """, unsafe_allow_html=True)
 
