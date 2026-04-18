@@ -62,9 +62,6 @@ def inject_custom_css():
         cursor: pointer;
         text-decoration: none;
         transition: transform 0.2s ease;
-        font-size: 30px;
-        color: white;
-        line-height: 1;
     }}
     .custom-fab:hover {{ transform: scale(1.1); color: white; }}
 
@@ -82,45 +79,38 @@ def inject_custom_css():
         100% {{ transform: scale(1.6); opacity: 0; }}
     }}
 
-    /* THE MASTER CHAT MODAL FIX */
-    /* Target the specific container that follows our anchor marker */
-    div[data-testid="stVerticalBlock"]:has(.chat-marker),
-    div[data-testid="stVerticalBlockBorderWrapper"]:has(.chat-marker),
-    div[data-testid="stVerticalBlock"]:has(> div > div > .chat-marker) {{
+    /* THE ULTIMATE SIDEBAR-AS-MODAL FIX (v3) */
+    /* Detach sidebar from left and float in bottom-right */
+    [data-testid="stSidebar"] {{
         position: fixed !important;
-        bottom: 105px !important;
         right: 30px !important;
-        width: 400px !important;
+        left: auto !important;
+        bottom: 105px !important;
         height: 600px !important;
-        max-height: 80vh !important;
+        width: 400px !important;
+        max-width: 90vw !important;
         background: #FFFFFF !important;
         border-radius: 24px !important;
         box-shadow: 0 12px 48px rgba(0,0,0,0.22) !important;
-        z-index: 999999 !important;
+        z-index: 100000 !important;
         border: 1px solid #f0f0f0 !important;
-        overflow: hidden !important;
-        display: flex !important;
-        flex-direction: column !important;
-        animation: modalSlideUp 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     }}
 
-    @keyframes modalSlideUp {{
-        from {{ transform: translateY(30px); opacity: 0; }}
-        to {{ transform: translateY(0); opacity: 1; }}
+    /* Remove main content push/margin */
+    [data-testid="stMain"] {{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
     }}
 
-    /* Ensure all children of the modal container are visible and stacked */
-    div[data-testid="stVerticalBlock"]:has(.chat-marker) > div,
-    div[data-testid="stVerticalBlockBorderWrapper"]:has(.chat-marker) > div {{
-        width: 100% !important;
+    /* Hide the expansion/collapse controls */
+    [data-testid="stSidebarCollapsedControl"] {{
+        display: none !important;
     }}
 
-    /* Message area scrolling */
-    .chat-history-scroll {{
-        height: 380px;
-        overflow-y: auto;
-        padding: 0 10px;
-        margin-bottom: 10px;
+    /* Hide sidebar standard header and styling */
+    [data-testid="stSidebarNav"] {{
+        display: none !important;
     }}
 
     /* Discovery Overlay */
@@ -131,7 +121,7 @@ def inject_custom_css():
         width: 100vw;
         height: 100vh;
         background: rgba(0, 0, 0, 0.45);
-        z-index: 999998;
+        z-index: 99999;
     }}
 
     .discovery-tooltip {{
@@ -194,31 +184,27 @@ def main():
 
     # --- FAB ---
     fab_link = "/?open_chat=true" if not st.session_state.chat_open else "/?open_chat=false"
-    fab_icon = "🤖" if not st.session_state.chat_open else "✖"
-    pulse_html = "<div class='pulse-effect'></div>" if not st.session_state.chat_open else ""
-    st.markdown(
-        f'<a href="{fab_link}" class="custom-fab" target="_self">{pulse_html}{fab_icon}</a>',
-        unsafe_allow_html=True,
-    )
+    st.markdown(f"""
+    <a href="{fab_link}" class="custom-fab" target="_self">
+        {"<div class='pulse-effect'></div>" if not st.session_state.chat_open else ""}
+        <span style="font-size: 30px; z-index: 1000001;">{"🤖" if not st.session_state.chat_open else "✖️"}</span>
+    </a>
+    """, unsafe_allow_html=True)
 
-    # --- CHAT MODAL ---
+    # --- CHAT MODAL (Relocated to Sidebar) ---
     if st.session_state.chat_open:
-        # The Master Container
-        # We start with a marker that our CSS uses to find the parent vertical block
-        st.markdown('<div class="chat-marker"></div>', unsafe_allow_html=True)
-        
-        with st.container():
-            # Header (Consolidated)
+        with st.sidebar:
+            # Header
             st.markdown("""
-                <div style="padding: 20px 20px 10px 20px;">
+                <div style="padding: 10px 0 5px 0;">
                     <div style="font-weight:700; font-size:20px; color:#111; margin-bottom:2px;">MF FAQ Assistant</div>
-                    <div style="font-size:13px; color:#777;">Groww AI • Facts & Data • v1.0</div>
+                    <div style="font-size:13px; color:#777;">Groww AI • Facts & Data • v2.0</div>
                 </div>
                 <hr style="margin: 0 0 15px 0; border: 0; border-top: 1px solid #f0f0f0;">
             """, unsafe_allow_html=True)
             
             # History
-            chat_box = st.container(height=400) # height inside the modal
+            chat_box = st.container(height=400)
             with chat_box:
                 for msg in st.session_state.messages:
                     with st.chat_message(msg["role"]):
