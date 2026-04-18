@@ -33,7 +33,6 @@ DASHBOARD_B64 = get_base64_image("groww-chat-ui/src/assets/dashboard.png")
 def inject_custom_css():
     st.markdown(f"""
     <style>
-    /* Background Image - Fixed & High Fidelity */
     .stApp {{
         background-image: url("data:image/png;base64,{DASHBOARD_B64}");
         background-size: cover;
@@ -41,12 +40,10 @@ def inject_custom_css():
         background-attachment: fixed;
     }}
 
-    /* Hide Streamlit Header & Footer */
     header {{visibility: hidden;}}
     footer {{visibility: hidden;}}
     #MainMenu {{visibility: hidden;}}
 
-    /* Floating Action Button (FAB) - Clean Version */
     .custom-fab {{
         position: fixed;
         bottom: 40px;
@@ -114,28 +111,27 @@ def inject_custom_css():
     [data-testid="stSidebarCollapsedControl"] {{ display: none !important; }}
     [data-testid="stSidebarNav"] {{ display: none !important; }}
 
-    /* Close Button inside Modal */
     .modal-close-btn {{
         position: absolute;
-        top: 20px;
-        right: 25px;
-        font-size: 22px;
-        color: #777;
+        top: 16px;
+        right: 16px;
+        font-size: 20px;
+        color: rgba(255,255,255,0.95);
         text-decoration: none;
         font-weight: 300;
-        transition: color 0.2s;
         z-index: 100005;
         cursor: pointer;
+        padding: 0 6px;
     }}
-    .modal-close-btn:hover {{ color: #111; }}
+    .modal-close-btn:hover {{
+        color: #ffffff;
+        background: rgba(255,255,255,0.15);
+        border-radius: 6px;
+    }}
 
-    /* Discovery Overlay */
     .discovery-overlay {{
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
+        inset: 0;
         background: rgba(0, 0, 0, 0.4);
         z-index: 99999;
     }}
@@ -153,17 +149,7 @@ def inject_custom_css():
         font-weight: 600;
         color: #44475b;
     }}
-    .discovery-tooltip:after {{
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        right: 25px;
-        border-width: 8px 8px 0;
-        border-style: solid;
-        border-color: #fff transparent transparent;
-    }}
 
-    /* PREMIUM MARQUEE FOOTER */
     .footer-marquee-ribbon {{
         position: fixed;
         bottom: 0;
@@ -189,7 +175,6 @@ def inject_custom_css():
         align-items: center;
         border-right: 1px solid #1e2433;
         white-space: nowrap;
-        z-index: 2;
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }}
