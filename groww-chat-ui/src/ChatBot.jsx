@@ -5,10 +5,10 @@ import './ChatBot.css';
 const EXAMPLES = [
     "What is the expense ratio of ICICI Bluechip Fund?",
     "What is the lock-in period for ELSS?",
-    "How do I download my capital gains statement?"
+    "Who is the fund manager for Small Cap fund?"
 ];
 
-const ChatBot = () => {
+const ChatBot = ({ onClose }) => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -110,7 +110,15 @@ const ChatBot = () => {
                         <p>Groww · Facts only · No investment advice</p>
                     </div>
                 </div>
-                <div className="groww-badge">GROWW</div>
+                <div className="header-right">
+                    <div className="groww-badge">GROWW</div>
+                    <button className="minimize-button" onClick={onClose} aria-label="Minimize chat">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
             </header>
 
             {/* Disclaimer Bar */}

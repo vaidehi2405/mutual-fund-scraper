@@ -9,74 +9,105 @@
   --refusal-border: #FAC775;
   --refusal-text: #633806;
   --bg-surface: #F4F7F6;
+  --bubble-bot: #FFFFFF;
+  --bubble-user: #00B386;
+  --text-main: #444444;
+  --text-sub: #777777;
 }
 
 .chatbot-container {
-  max-width: 420px;
-  margin: 20px auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
   display: flex;
   flex-direction: column;
-  height: 600px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98); /* Subtle glassmorphism base */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 60px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 179, 134, 0.1);
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
 }
 
 /* Header Section */
 .chat-header {
-  background: var(--groww-green);
+  background-color: var(--groww-green);
   padding: 12px 16px;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
 }
 
 .header-left {
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
+.minimize-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.minimize-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
 .icon-circle {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .header-info h1 {
   margin: 0;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 .header-info p {
   margin: 0;
   font-size: 11px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .groww-badge {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 3px 10px;
   border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
 }
 
 /* Disclaimer Bar */
 .disclaimer-bar {
   background: var(--disclaimer-bg);
-  padding: 8px;
+  padding: 10px;
   text-align: center;
   font-size: 11px;
+  font-weight: 500;
   color: var(--disclaimer-text);
   border-bottom: 0.5px solid var(--disclaimer-border);
 }
@@ -84,23 +115,26 @@
 /* Chat Body */
 .chat-body {
   flex: 1;
-  background: var(--bg-surface);
+  background: #F8FBF9; /* Very light tint matching Groww surface */
   overflow-y: auto;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .timestamp-label {
   align-self: center;
   font-size: 10px;
-  color: #999;
+  font-weight: 600;
+  color: #BBB;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin: 8px 0;
 }
 
 .message-wrapper {
-  max-width: 85%;
+  max-width: 88%;
   display: flex;
   flex-direction: column;
 }
@@ -115,113 +149,132 @@
 
 .message-bubble {
   padding: 10px 14px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
 }
 
 .user-bubble {
-  background: var(--groww-green);
+  background: var(--bubble-user);
   color: white;
-  border-radius: 12px 12px 3px 12px;
+  border-radius: 16px 16px 4px 16px;
+  font-weight: 500;
 }
 
 .bot-bubble {
-  background: white;
-  color: #333;
-  border: 0.5px solid #E0E0E0;
-  border-radius: 12px 12px 12px 3px;
+  background: var(--bubble-bot);
+  color: var(--text-main);
+  border: 1px solid #EEF2F1;
+  border-radius: 16px 16px 16px 4px;
 }
 
 .refusal-bubble {
   background: var(--refusal-bg);
-  border: 0.5px solid var(--refusal-border);
+  border: 1px solid var(--refusal-border);
   color: var(--refusal-text);
-  border-radius: 12px 12px 12px 3px;
+  border-radius: 16px 16px 16px 4px;
 }
 
 .source-chip {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  background: var(--disclaimer-bg);
+  gap: 6px;
+  background: #E6F7F2;
   color: var(--groww-green);
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 5px 10px;
+  border-radius: 6px;
   font-size: 11px;
-  margin-top: 6px;
+  margin-top: 8px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  border: 0.5px solid rgba(0, 179, 134, 0.2);
 }
 
 .last-updated {
   font-size: 10px;
-  color: #888;
-  margin-top: 4px;
+  color: #AAA;
+  margin-top: 6px;
+  font-weight: 500;
 }
 
 /* Example Questions */
 .examples-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 4px;
 }
 
 .examples-label {
   font-size: 11px;
-  color: #888;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   margin-bottom: 4px;
 }
 
 .pill-button {
   background: white;
-  border: 0.5px solid #DDD;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 13px;
+  border: 1px solid #EAEEED;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text-main);
   text-align: left;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
 .pill-button:hover {
-  background: #fdfdfd;
+  border-color: var(--groww-green);
+  background: var(--disclaimer-bg);
+  transform: translateY(-1px);
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   background: var(--groww-green);
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 /* Input Area */
 .input-area {
   padding: 12px 16px;
   background: white;
-  border-top: 0.5px solid #EEE;
+  border-top: 1px solid #F0F3F2;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   position: relative;
 }
 
 .chat-input {
   flex: 1;
   background: #F0F3F2;
-  border: none;
+  border: 1px solid transparent;
   padding: 10px 16px;
-  border-radius: 20px;
-  font-size: 13px;
+  border-radius: 24px;
+  font-size: 14px;
   outline: none;
+  transition: all 0.2s;
+}
+
+.chat-input:focus {
+  background: white;
+  border-color: var(--groww-green);
+  box-shadow: 0 0 0 4px rgba(0, 179, 134, 0.05);
 }
 
 .send-button {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   background: var(--groww-green);
   border: none;
   border-radius: 50%;
@@ -230,58 +283,53 @@
   justify-content: center;
   color: white;
   cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 179, 134, 0.3);
+}
+
+.send-button:hover {
+  transform: scale(1.05);
 }
 
 .pii-warning {
   position: absolute;
-  top: -30px;
-  left: 16px;
-  background: #FAEEDA;
-  color: #633806;
+  top: -36px;
+  left: 20px;
+  background: #FFF4E5;
+  color: #663C00;
   font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 4px;
-  border: 0.5px solid #FAC775;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #FFD599;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* Loading Dots */
 .typing-dots {
   display: flex;
-  gap: 4px;
-  padding: 10px;
+  gap: 5px;
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #F0F3F2;
+  width: fit-content;
 }
 
 .dot-anim {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   background: var(--groww-green);
   border-radius: 50%;
   animation: bounce 1.4s infinite ease-in-out both;
 }
 
-.dot-anim:nth-child(1) { animation-delay: -0.32s; }
-.dot-anim:nth-child(2) { animation-delay: -0.16s; }
-
 @keyframes bounce {
-  0%, 80%, 100% { transform: scale(0); }
-  40% { transform: scale(1.0); }
+  0%, 80%, 100% { transform: scale(0.3); opacity: 0.3; }
+  40% { transform: scale(1.0); opacity: 1; }
 }
 
-@media (max-width: 420px) {
-  .chatbot-container {
-    max-width: 100%;
-    margin: 0;
-    height: 100vh;
-    border-radius: 0;
-  }
-}
-
-/* Dark Mode */
+/* We force LIGHT theme to match the Groww landing page screenshot */
 @media (prefers-color-scheme: dark) {
-  .chatbot-container { background: #1A1D1C; color: #EEE; }
-  .chat-body { background: #121413; }
-  .bot-bubble { background: #2A2E2D; color: #EEE; border-color: #3A3E3D; }
-  .input-area { background: #1A1D1C; border-top-color: #333; }
-  .chat-input { background: #2A2E2D; color: #EEE; }
-  .pill-button { background: #2A2E2D; border-color: #3A3E3D; color: #EEE; }
+  /* No changes, we maintain Light theme consistency */
 }
